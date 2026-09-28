@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1240 648" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="personal-dashboard-title personal-dashboard-desc">
+      <title id="personal-dashboard-title">개인 대시보드 시스템 흐름</title>
+      <desc id="personal-dashboard-desc">무인 수집기가 쌓은 수집 피드를 표준 라이브러리 서버가 읽어 화면에 보이고, 사용자가 화면에서 판별·지시하면 서버가 작업 큐에 카드를 적고 서버 밖 워커가 구독 CLI로 결과를 큐에 쓰며 알림을 보내고, 사용자가 제출한 문장만 서버가 그대로 일지·판단 기록에 반영하는 구조로, 서버와 워커 사이에 모델 호출 경계가 있다.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600&amp;family=IBM+Plex+Sans+KR:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap');</style>
+        <marker id="pd-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6B7075"/></marker>
+        <marker id="pd-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C63D2F"/></marker>
+        <marker id="pd-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3D5A66"/></marker>
+      </defs>
+      <rect width="100%" height="100%" fill="#FAFAF7"/>
+      <rect x="40" y="40" width="232" height="520" rx="8" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <rect x="52" y="44" width="96" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="56" y="56" fill="#8E9398" font-size="12" font-weight="500" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">원천 · 무인 수집</text>
+      <rect x="304" y="40" width="560" height="520" rx="8" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <rect x="316" y="44" width="232" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="320" y="56" fill="#8E9398" font-size="12" font-weight="500" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">대시보드 서버 · Python 표준 라이브러리</text>
+      <rect x="912" y="40" width="288" height="520" rx="8" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <rect x="924" y="44" width="108" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="928" y="56" fill="#8E9398" font-size="12" font-weight="500" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">서버 밖 · 구독 CLI</text>
+      <line x1="888" y1="40" x2="888" y2="560" stroke="#C63D2F" stroke-width="1.2" stroke-dasharray="4,4"/>
+      <rect x="796" y="176" width="184" height="40" rx="2" fill="#FAFAF7"/>
+      <text x="888" y="192" fill="#C63D2F" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">서버는 모델을</text>
+      <text x="888" y="208" fill="#C63D2F" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">부르지 않는다</text>
+      <path d="M 156,144 V 224" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="164" y="176" width="76" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="168" y="188" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">하루 여러 번</text>
+      <path d="M 244,256 H 336" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="272" y="232" width="36" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="290" y="244" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">읽기</text>
+      <path d="M 424,144 V 240" fill="none" stroke="#3D5A66" stroke-width="1.2" marker-end="url(#pd-arrow-link)"/>
+      <rect x="432" y="184" width="112" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="436" y="196" fill="#3D5A66" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">판별 · 지시 · 제출</text>
+      <path d="M 512,272 H 624" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="536" y="248" width="64" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="568" y="260" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">카드 적기</text>
+      <path d="M 800,256 H 952" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="826" y="232" width="36" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="844" y="244" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">집기</text>
+      <path d="M 952,288 H 800" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="812" y="296" width="64" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="844" y="308" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">결과 쓰기</text>
+      <path d="M 1040,240 V 144" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="1048" y="184" width="52" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="1052" y="196" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">끝나면</text>
+      <path d="M 952,112 H 512" fill="none" stroke="#3D5A66" stroke-width="1.2" marker-end="url(#pd-arrow-link)"/>
+      <rect x="680" y="88" width="112" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="736" y="100" fill="#3D5A66" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">누르면 그 카드로</text>
+      <path d="M 440,320 V 512 Q 440,520 448,520 H 1032 Q 1040,520 1040,512 V 304" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="624" y="496" width="160" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="704" y="508" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">별도 프로세스로 띄우기만</text>
+      <path d="M 336,296 H 296 Q 288,296 288,304 V 424 Q 288,432 280,432 H 244" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#pd-arrow)"/>
+      <rect x="296" y="360" width="104" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="300" y="372" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">제출 문장 그대로</text>
+      <path d="M 712,400 V 304" fill="none" stroke="#6B7075" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#pd-arrow)"/>
+      <rect x="720" y="344" width="64" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="724" y="356" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">90초 점검</text>
+      <rect x="68" y="80" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="68" y="80" width="176" height="64" rx="6" fill="rgba(107,112,117,0.10)" stroke="#8E9398" stroke-width="1"/>
+      <text x="84" y="100" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">①</text>
+      <text x="156" y="110" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">수집기</text>
+      <text x="156" y="130" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">launchd 무인 실행</text>
+      <rect x="68" y="224" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="68" y="224" width="176" height="64" rx="6" fill="rgba(28,30,33,0.05)" stroke="#6B7075" stroke-width="1"/>
+      <text x="84" y="244" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">②</text>
+      <text x="156" y="254" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">수집 피드</text>
+      <text x="156" y="274" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">jsonl · 요약 · 축 태그</text>
+      <rect x="68" y="400" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="68" y="400" width="176" height="64" rx="6" fill="rgba(28,30,33,0.05)" stroke="#6B7075" stroke-width="1"/>
+      <text x="84" y="420" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑧</text>
+      <text x="156" y="430" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">일지 · 판단 기록</text>
+      <text x="156" y="450" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">사람이 쓴 원천 · md</text>
+      <rect x="336" y="80" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="336" y="80" width="176" height="64" rx="6" fill="rgba(107,112,117,0.10)" stroke="#8E9398" stroke-width="1"/>
+      <text x="352" y="100" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">④</text>
+      <text x="424" y="110" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">화면</text>
+      <text x="424" y="130" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">보드 · 지도 · 360 · 폰</text>
+      <rect x="336" y="240" width="176" height="80" rx="6" fill="#FAFAF7"/>
+      <rect x="336" y="240" width="176" height="80" rx="6" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="352" y="260" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">③</text>
+      <text x="424" y="278" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">대시보드 서버</text>
+      <text x="424" y="298" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">읽기 · 계보 파싱 · 반영</text>
+      <rect x="624" y="240" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="624" y="240" width="176" height="64" rx="6" fill="rgba(28,30,33,0.05)" stroke="#6B7075" stroke-width="1"/>
+      <text x="640" y="260" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑤</text>
+      <text x="712" y="270" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">작업 큐</text>
+      <text x="712" y="290" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">jsonl · flock + 원자 교체</text>
+      <rect x="624" y="400" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="624" y="400" width="176" height="64" rx="6" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.30)" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="712" y="430" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">감시 루프</text>
+      <text x="712" y="450" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">재시도 3회 · 15분 닫기</text>
+      <rect x="952" y="240" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="952" y="240" width="176" height="64" rx="6" fill="rgba(28,30,33,0.03)" stroke="rgba(28,30,33,0.30)" stroke-width="1"/>
+      <text x="968" y="260" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑥</text>
+      <text x="1040" y="270" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">워커</text>
+      <text x="1040" y="290" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">claude CLI · 정리 · 실행</text>
+      <rect x="952" y="80" width="176" height="64" rx="6" fill="#FAFAF7"/>
+      <rect x="952" y="80" width="176" height="64" rx="6" fill="rgba(28,30,33,0.03)" stroke="rgba(28,30,33,0.30)" stroke-width="1"/>
+      <text x="968" y="100" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑦</text>
+      <text x="1040" y="110" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">알림</text>
+      <text x="1040" y="130" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">맥 알림 · Slack 딥링크</text>
+      <line x1="40" y1="588" x2="1200" y2="588" stroke="rgba(28,30,33,0.10)" stroke-width="0.8"/>
+      <text x="40" y="608" fill="#6B7075" font-size="8" font-weight="500" text-anchor="start" font-family="'IBM Plex Mono', ui-monospace, monospace" letter-spacing="0.14em">LEGEND</text>
+      <rect x="120" y="596" width="20" height="16" rx="4" fill="rgba(107,112,117,0.10)" stroke="#8E9398" stroke-width="1"/>
+      <text x="148" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">사람 입력 · 화면</text>
+      <rect x="284" y="596" width="20" height="16" rx="4" fill="rgba(28,30,33,0.05)" stroke="#6B7075" stroke-width="1"/>
+      <text x="312" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">파일 저장소</text>
+      <rect x="448" y="596" width="20" height="16" rx="4" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="476" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">서버 처리</text>
+      <rect x="612" y="596" width="20" height="16" rx="4" fill="rgba(28,30,33,0.03)" stroke="rgba(28,30,33,0.30)" stroke-width="1"/>
+      <text x="640" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">서버 밖 프로세스</text>
+      <rect x="776" y="596" width="20" height="16" rx="4" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.30)" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="804" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">보조 감시</text>
+      <line x1="940" y1="604" x2="964" y2="604" stroke="#3D5A66" stroke-width="1.2" marker-end="url(#pd-arrow-link)"/>
+      <text x="972" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">사람이 누르는 흐름</text>
+      <line x1="1104" y1="604" x2="1128" y2="604" stroke="#C63D2F" stroke-width="1.2" stroke-dasharray="4,4"/>
+      <text x="1136" y="608" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">모델 경계</text>
+    </svg>
